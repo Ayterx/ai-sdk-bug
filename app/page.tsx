@@ -34,6 +34,11 @@ export default function Chat() {
           {message.metadata?.isAborted && (
             <div style={{ backgroundColor: "yellow" }}>Message Aborted</div>
           )}
+          {message.metadata?.error && (
+            <div style={{ backgroundColor: "red" }}>
+              {message.metadata.error}
+            </div>
+          )}
 
           {message.parts.map((part, i) => {
             switch (part.type) {
